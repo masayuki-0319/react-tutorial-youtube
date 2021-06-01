@@ -1,5 +1,6 @@
 import { VFC } from 'react';
+import { Layout } from '../components/Layout/Layout';
 
 export const Watch: VFC = () => {
-  return <div>Watch ページ</div>;
+  return <Layout>Watch ページ</Layout>;
 };

@@ -1,5 +1,6 @@
 import { VFC } from 'react';
+import { Layout } from '../components/Layout/Layout';
 
 export const Search: VFC = () => {
-  return <div>Search ページ</div>;
+  return <Layout>Search ページ</Layout>;
 };
