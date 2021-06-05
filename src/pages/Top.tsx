@@ -25,14 +25,7 @@ export const Top: VFC = () => {
       <VideoGrid>
         {globalState.popular.length > 0 &&
           globalState.popular.map((popular) => {
-            return (
-              <VideoGridItem
-                key={popular.id}
-                id={popular.id}
-                src={popular.snippet.thumbnails.standard.url}
-                title={popular.snippet.title}
-              />
-            );
+            return <VideoGridItem key={popular.id} video={popular} />;
           })}
       </VideoGrid>
     </Layout>
