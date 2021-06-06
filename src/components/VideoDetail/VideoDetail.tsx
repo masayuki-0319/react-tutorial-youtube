@@ -1,8 +1,12 @@
 import { useEffect, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
+import Linkify from 'react-linkify';
+
 import { fetchSelectedData } from '../../apis/index';
 import { Store } from '../../store/index';
 import { VideoResponse } from '../../types/youtube/VideoResponse';
+import { VideoPlay } from '../VideoPlay/VideoPlay';
+import Style from './VideoDetail.module.scss';
 
 type QueryParams = {
   search: string;
@@ -37,5 +41,20 @@ export const VideoDetail = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div></div>;
+  return (
+    <div className={Style.wrap}>
+      {globalState.selected !== null ? (
+        <div>
+          <VideoPlay id={globalState.selected.id} />
+          <p>{globalState.selected.snippet.title}</p>
+          <hr />
+          <Linkify>
+            <pre>{globalState.selected.snippet.description}</pre>
+          </Linkify>
+        </div>
+      ) : (
+        <p>No Data</p>
+      )}
+    </div>
+  );
 };

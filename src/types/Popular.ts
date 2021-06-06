@@ -2,6 +2,7 @@ export type Video = {
   id: string;
   snippet: {
     title: string;
+    description: string;
     thumbnails: {
       standard: {
         url: string;
@@ -9,7 +10,7 @@ export type Video = {
     };
   };
   title: string;
-  [k: string]: string | object | number
+  [k: string]: string | object | number;
 };
 
 export type Popular = {
