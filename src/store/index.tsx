@@ -9,6 +9,7 @@ type PopularStore = {
 
 const initialState: Popular = {
   popular: [],
+  selected: null,
 };
 
 const initialStore: PopularStore = {

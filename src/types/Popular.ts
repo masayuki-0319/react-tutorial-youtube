@@ -10,9 +10,9 @@ export type Video = {
     };
   };
   title: string;
-  [k: string]: string | object | number;
 };
 
 export type Popular = {
   popular: Video[];
+  selected: Video | null;
 };
