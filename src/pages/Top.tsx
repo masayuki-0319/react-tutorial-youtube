@@ -1,7 +1,8 @@
 import { VFC, useContext, useEffect } from 'react';
-import { Layout } from '../components/Layout/Layout';
 import { fetchPupularData } from '../apis/index';
+import { VideoResponse } from '../types/youtube/VideoResponse';
 import { Store } from '../store/index';
+import { Layout } from '../components/Layout/Layout';
 import { VideoGrid } from '../components/VideoGrid/VideoGrid';
 import { VideoGridItem } from '../components/VideoGridItem/VideoGridItem';
 
@@ -9,7 +10,7 @@ export const Top: VFC = () => {
   const { globalState, setGlobalState } = useContext(Store);
 
   useEffect(() => {
-    fetchPupularData().then((res: any) => {
+    fetchPupularData().then((res: VideoResponse) => {
       console.log(res);
       setGlobalState({
         type: 'SET_POPULAR',

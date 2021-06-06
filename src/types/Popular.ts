@@ -1,4 +1,3 @@
-// TODO: API の JSON Schema が必要
 export type Video = {
   id: string;
   snippet: {
@@ -10,6 +9,7 @@ export type Video = {
     };
   };
   title: string;
+  [k: string]: string | object | number
 };
 
 export type Popular = {
