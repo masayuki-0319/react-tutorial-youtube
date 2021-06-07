@@ -11,7 +11,6 @@ export const Top: VFC = () => {
 
   useEffect(() => {
     fetchPupularData().then((res: VideoResponse) => {
-      console.log(res);
       setGlobalState({
         type: 'SET_POPULAR',
         payload: { popular: res.data.items },
@@ -19,7 +18,6 @@ export const Top: VFC = () => {
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(globalState);
 
   return (
     <Layout>

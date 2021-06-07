@@ -8,8 +8,6 @@ type Props = {
 };
 
 export const SideListItem: VFC<Props> = ({ video }) => {
-  console.log(video.id.videoId);
-
   return (
     <Link
       to={{ pathname: 'watch', search: `?v=${video.id.videoId}` }}
