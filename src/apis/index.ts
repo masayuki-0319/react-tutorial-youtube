@@ -38,3 +38,12 @@ export const fetchSelectedData = async (id: string) => {
     },
   });
 };
+
+export const fetchSearchData = async (query: string) => {
+  return await client.get('/search', {
+    params: {
+      q: query,
+      ...params,
+    },
+  });
+};

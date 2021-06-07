@@ -24,6 +24,14 @@ const setSelected = (video: Video) => ({
   },
 });
 
+const SET_SEARCHED = 'SET_SEARCHED' as const;
+const setSearched = (searched: string) => ({
+  type: SET_SEARCHED,
+  payload: {
+    searched: searched,
+  },
+});
+
 const SET_TERM = 'SET_TERM' as const;
 const setTerm = (term: string) => ({
   type: SET_TERM,
@@ -36,6 +44,7 @@ export type Actions =
   | ReturnType<typeof setPupular>
   | ReturnType<typeof setSelected>
   | ReturnType<typeof setRelated>
+  | ReturnType<typeof setSearched>
   | ReturnType<typeof setTerm>;
 
 export const reducer = (state: Popular, action: Actions) => {
@@ -46,6 +55,8 @@ export const reducer = (state: Popular, action: Actions) => {
       return { ...state, related: action.payload.related };
     case SET_SELECTED:
       return { ...state, selected: action.payload.selected };
+    case SET_SEARCHED:
+      return { ...state, term: action.payload.searched };
     case SET_TERM:
       return { ...state, term: action.payload.term };
     default:

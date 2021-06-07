@@ -27,4 +27,5 @@ export type Popular = {
   related: Video[];
   selected: Video | null;
   term: string;
+  searched: Video[];
 };
