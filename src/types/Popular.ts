@@ -1,10 +1,19 @@
 export type Video = {
-  id: string;
+  id: {
+    kind: string;
+    videoId: string;
+  };
   snippet: {
     title: string;
     description: string;
     thumbnails: {
+      default: {
+        url: string;
+      };
       standard: {
+        url: string;
+      };
+      medium: {
         url: string;
       };
     };
@@ -15,5 +24,6 @@ export type Video = {
 
 export type Popular = {
   popular: Video[];
+  related: Video[];
   selected: Video | null;
 };

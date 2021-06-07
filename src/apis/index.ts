@@ -21,6 +21,15 @@ export const fetchPupularData = async () => {
   });
 };
 
+export const fetchRelatedData = async (id: string) => {
+  return await client.get('/search', {
+    params: {
+      relatedToVideoId: id,
+      ...params,
+    },
+  });
+};
+
 export const fetchSelectedData = async (id: string) => {
   return await client.get('/videos', {
     params: {

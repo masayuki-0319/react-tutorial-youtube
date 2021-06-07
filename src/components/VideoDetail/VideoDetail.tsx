@@ -39,13 +39,13 @@ export const VideoDetail = () => {
   useEffect(() => {
     setSelectedVideo();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [location.search]);
 
   return (
     <div className={Style.wrap}>
       {globalState.selected !== null ? (
         <div>
-          <VideoPlay id={globalState.selected.id} />
+          <VideoPlay id={globalState.selected.id.videoId} />
           <p>{globalState.selected.snippet.title}</p>
           <hr />
           <Linkify>

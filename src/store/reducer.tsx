@@ -8,6 +8,14 @@ const setPupular = (popular: Video[]) => ({
   },
 });
 
+const SET_RELATED = 'SET_RELATED' as const;
+const setRelated = (related: Video[]) => ({
+  type: SET_RELATED,
+  payload: {
+    related: related,
+  },
+});
+
 const SET_SELECTED = 'SET_SELECTED' as const;
 const setSelected = (video: Video) => ({
   type: SET_SELECTED,
@@ -18,12 +26,15 @@ const setSelected = (video: Video) => ({
 
 export type Actions =
   | ReturnType<typeof setPupular>
-  | ReturnType<typeof setSelected>;
+  | ReturnType<typeof setSelected>
+  | ReturnType<typeof setRelated>;
 
 export const reducer = (state: Popular, action: Actions) => {
   switch (action.type) {
     case SET_POPULAR:
       return { ...state, popular: action.payload.popular };
+    case SET_RELATED:
+      return { ...state, related: action.payload.related };
     case SET_SELECTED:
       return { ...state, selected: action.payload.selected };
     default:
