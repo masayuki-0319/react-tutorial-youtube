@@ -11,6 +11,7 @@ const initialState: Popular = {
   popular: [],
   related: [],
   selected: null,
+  term: '',
 };
 
 const initialStore: PopularStore = {

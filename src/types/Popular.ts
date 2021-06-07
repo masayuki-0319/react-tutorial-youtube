@@ -26,4 +26,5 @@ export type Popular = {
   popular: Video[];
   related: Video[];
   selected: Video | null;
+  term: string;
 };
